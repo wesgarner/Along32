@@ -1203,7 +1203,7 @@ segment .text
 	jne  .NormalColor	; yes: make bright/bold
 	mov  byte [strEnd - 11], '2'; styleStr
 
-.NormalColor
+.NormalColor:
 	mov  al, bl		; restore al after division
 	add  [esi], ah		; update 30 and 40 in the string
 

@@ -8,8 +8,14 @@
 # use for Linux: (comment out section for macintosh)
 nasm -f elf32 Along32.asm #
 nasm -f elf32 -l$1.lst $1.asm  #
-gcc -m32 $1.o Along32.o -o $1 #
-#
+#gcc -m32 $1.o Along32.o -o $1 #
+ld -lAlong32 -lc -m elf_i386 --dynamic-linker /lib/ld-linux.so.2 -o $1 $1.o
+#gcc -m32 $1.o Along32.o -o $1 #
+#gcc -m32 $1.o Along32.o -o $1 #
+
+
+
+
 # use for Macintosh: (comment out section for Linux)
 #nasm -fmacho along32.asm #
 #nasm -fmacho -l$1.lst $1.asm #
