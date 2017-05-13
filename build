@@ -1,0 +1,10 @@
+# This is a script instead of a Makefile for demonstration purposes.
+# You will have needed to install the Along32 library before this, of course.
+
+# Assemble the .asm, being sure to specify 32 bit mode.
+nasm -f elf32 -o hello.o HelloWorld.asm
+
+# Link the .o with the library, also being sure to specify 32 bit mode.
+ld -lAlong32 -m elf_i386 --dynamic-linker /lib/ld-linux.so.2 -o hello hello.o
+
+# There should now be a "hello" executable.
