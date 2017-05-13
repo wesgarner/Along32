@@ -9,6 +9,8 @@
 ; Added comments
 ;
 
+; TA: Asli acamlica@uab.edu
+
 %include	"Along32.inc"
 extern		printf
 
